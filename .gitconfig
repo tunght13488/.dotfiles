@@ -95,7 +95,7 @@
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
 	# Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
-	whitespace = space-before-tab,indent-with-non-tab,trailing-space,cr-at-eol
+	whitespace = fix,space-before-tab,trailing-space,cr-at-eol
 	ignorecase = false
 	autocrlf = input
 
@@ -116,10 +116,22 @@
 	added     = green bold
 	changed   = yellow bold
 	untracked = red bold
+
 [merge]
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
-	tool = Kaleidoscope
+	tool = p4merge
+[mergetool]
+	prompt = false
+	keepBackup = true
+[mergetool "meld"]
+	cmd = meld
+	trustExitCode = false
+[mergetool "p4merge"]
+	cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+	keepTemporaries = false
+	trustExitCode = false
+	keepBackup = false
 
 [branch]
 	autosetupmerge = true
@@ -148,18 +160,17 @@
 # Diff
 [diff]
 	algorithm = patience
-	tool      = Kaleidoscope
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+    tool = p4merge
 [difftool]
 	prompt = false
-[mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustExitCode = true
-[mergetool]
-	prompt = false
-	keepBackup = true
+[difftool "p4merge"]
+    cmd = "p4merge $LOCAL $REMOTE"
+[difftool "meld"]
+	cmd = meld
 
 [github]
 	user  = tunght13488
 	token = 26ae3f727a63401c3901e588b1dcf075
+[user]
+	name = Ha The Tung
+	email = tunght13488@gmail.com

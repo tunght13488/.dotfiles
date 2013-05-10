@@ -15,9 +15,6 @@ alias ohmyzsh="subl ~/.oh-my-zsh"
 alias bob="php artisan bob::build"
 # apache
 alias apache2ctl='sudo /opt/local/apache2/bin/apachectl'
-# mysql
-alias mysql=/usr/local/mysql/bin/mysql
-alias mysqladmin=/usr/local/mysql/bin/mysqladmin
 # nginx
 alias nginx_start='sudo launchctl load -w /Library/LaunchDaemons/org.macports.nginx.plist'
 alias nginx_stop='sudo launchctl unload -w /Library/LaunchDaemons/org.macports.nginx.plist'
@@ -29,6 +26,7 @@ alias fpm_restart='fpm_stop; fpm_start'
 # ftp
 alias ftp_start='sudo -s launchctl load -w /System/Library/LaunchDaemons/ftp.plist'
 alias ftp_stop='sudo -s launchctl unload -w /System/Library/LaunchDaemons/ftp.plist'
+
 # vim
 # alias vim='/opt/local/bin/vim'
 
@@ -66,14 +64,15 @@ plugins=(battery gem git laravel macports node npm osx sublime)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+export PATH="/opt/local/lib/mysql55/bin:/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin:/usr/local/sbin:/Users/rocco/bin:/usr/X11/bin:$PATH"
 export PNG_DIR=/usr/local
 export EDITOR=/usr/bin/vim
-export MP_EDITOR=/Users/rocco/bin/subl2
+export MP_EDITOR=/Users/rocco/bin/subl
 export LANG=en_US.utf8
 export LC_ALL=C
 export JAVA_HOME=$(/usr/libexec/java_home)
 
-# source ~/.git-flow-completion.zsh
+source ~/.git-flow-completion.zsh
 
 # [[ -s /Users/rocco/.nvm/nvm.sh ]] && . /Users/rocco/.nvm/nvm.sh # This loads NVM
 
