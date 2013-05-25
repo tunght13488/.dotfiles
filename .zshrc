@@ -74,7 +74,7 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 
 source ~/.git-flow-completion.zsh
 
-# [[ -s /Users/rocco/.nvm/nvm.sh ]] && . /Users/rocco/.nvm/nvm.sh # This loads NVM
+[[ -s /Users/rocco/.nvm/nvm.sh ]] && . /Users/rocco/.nvm/nvm.sh # This loads NVM
 
 set -o vi
 
