@@ -27,6 +27,14 @@ alias fpm_restart='fpm_stop; fpm_start'
 alias ftp_start='sudo -s launchctl load -w /System/Library/LaunchDaemons/ftp.plist'
 alias ftp_stop='sudo -s launchctl unload -w /System/Library/LaunchDaemons/ftp.plist'
 
+# Open With
+alias -s php=subl
+alias -s html=subl
+alias -s js=subl
+alias -s conf=subl
+alias -s ini=subl
+alias -s log="less -MN"
+
 # vim
 # alias vim='/opt/local/bin/vim'
 
@@ -59,7 +67,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(battery gem git laravel macports node npm osx sublime)
+plugins=(autojump battery bower composer gem git git-extras laravel last-working-dir lol macports node npm osx sublime symfony2 zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -72,9 +80,9 @@ export LANG=en_US.utf8
 export LC_ALL=C
 export JAVA_HOME=$(/usr/libexec/java_home)
 
-source ~/.git-flow-completion.zsh
-
-[[ -s /Users/rocco/.nvm/nvm.sh ]] && . /Users/rocco/.nvm/nvm.sh # This loads NVM
+[[ -s ~/.git-flow-completion.zsh ]] && . ~/.git-flow-completion.zsh
+[[ -s ~/.nvm/nvm.sh ]] && . ~/.nvm/nvm.sh
+[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
 
 set -o vi
 

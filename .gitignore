@@ -55,6 +55,7 @@ Desktop.ini
 # PHPStorm files #
 ##################
 .idea/
+atlassian-ide-plugin.xml
 
 # Magento files #
 #################

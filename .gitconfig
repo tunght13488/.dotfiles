@@ -77,7 +77,7 @@
 	sl          = stash list
 	snapshot    = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
 	ss          = stash save
-	st          = status -sb
+	st          = status
 	svnd        = svn dcommit
 	svnl        = svn log --oneline --show-commit
 	svnr        = svn rebase
@@ -85,6 +85,8 @@
 	type        = cat-file -t
 	unassume    = update-index --no-assume-unchanged
 	unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
+	dt = difftool
+	dtc = difftool --cached
 
 [apply]
 	# Detect whitespace errors when applying a patch
