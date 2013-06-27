@@ -92,5 +92,5 @@ fi
 
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
-bindkey ^r  history-incremental-search-backward
+bindkey "^r"  history-incremental-search-backward
 setopt hist_ignore_all_dups
